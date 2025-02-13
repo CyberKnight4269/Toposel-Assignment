@@ -58,7 +58,7 @@ userSchema.methods.generateAuthToken = function () {
 }
 
 userSchema.methods.generateRefreshToken = function () {
-    const refreshToken = jwt.sign({ id: this._id }, process.env.JWT_REFRESH_SECRET, { expiresIn: '7d' })
+    const refreshToken = jwt.sign({ id: this._id }, process.env.JWT_REFRESH_SECRET, { expiresIn: '4d' })
     return refreshToken;
 }
 
