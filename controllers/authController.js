@@ -1,7 +1,7 @@
 const User = require('../models/user')
 
 const registerUser = async (req, res) => {
-    const {username,email,password,fullname,gender,date_of_birth,country} = req.body
+    const {username,email,password,fullName,gender,date_of_birth,country} = req.body
     try
     {
         if(email.includes('@') && password.length >= 8)
@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
             username,
             email,
             password,
-            fullname,
+            fullName,
             gender,
             date_of_birth,
             country,
