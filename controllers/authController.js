@@ -42,10 +42,10 @@ const loginUser = async (req, res) => {
     {
         const user = await User.findOne({ email })
         if (!user) return res.status(400).json({ message: 'Invalid email' })
-        const isMatch = await User.matchPassword(password)
+        const isMatch = await user.matchPassword(password)
         if (!isMatch) return res.status(400).json({ message: 'Password incorrect' })
-        const token = User.generateAuthToken()
-        const refreshToken = User.generateRefreshToken()
+        const token = user.generateAuthToken()
+        const refreshToken = user.generateRefreshToken()
         res.status(200).json({
         message: 'Login successful',
         token,
