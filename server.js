@@ -12,11 +12,6 @@ app.use(cors())
 
 connectDB()
 
-// Test Route
-app.get('/', (req, res) => {
-  res.send('User Management System API is running!')
-})
-
 app.use('/api/auth', authRoute)
 app.use('/api/user',userRoute)
 
